@@ -13,8 +13,8 @@
 	</div><!--center-->
 	<?php
 		if(isset($_POST['action_search'])) {
-			define('KEY', 'AIzaSyDHoCxY9Z4pwbEV5pKtAoy-sh1Jn0gURkM');
-			define('CX', '013164849312691447787:tuchz6johsw');
+			define('KEY', 'SUAKEY');
+			define('CX', 'ID');
 			$q = urlencode(trim($_POST['q']));
 			
 			if(!empty($q)) {
@@ -28,14 +28,14 @@
 
 				$result  = json_decode($request);
 				$tam 	 = count($result->items);
-				
+
 				for($i = 0; $i < $tam; $i++) {
 					echo '	<div class="center">
 							<div class="feed">
 							<div class="feed-item">
 
           						<div class="icon-holder col-1-5">
-          						<div class="icon" style=" background-image: url('.$result->items[0]->pagemap->cse_thumbnail[0]->src.');background-size: 55px 55px;"></div>
+          						<div class="icon" style=" background-image: url('.$result->items[$i]->pagemap->cse_thumbnail[0]->src.');background-size: 55px 55px;"></div>
           						</div>
 
 								<div class="text-holder">
